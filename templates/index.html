@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Peter Pan | Longevity for Everyone</title>
+        <link
+            rel="stylesheet"
+            href="{{ url_for('static', filename='style.css') }}"
+        />
+        <link
+            href="https://fonts.googleapis.com/css?family=Montserrat:100,200,300,400,500,600,700,800,900"
+            rel="stylesheet"
+        />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Kite+One&display=swap"
+            rel="stylesheet"
+        />
+        <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    </head>
+    <body>
+        <nav>
+            <div class="logo">
+                <img
+                    src="{{ url_for('static', filename='logo.png') }}"
+                    alt="Logo"
+                />
+            </div>
+            <ul>
+                <li><a href="#main-content">Product Demo</a></li>
+                <li><a href="#aboutpeter">About Peter Pan</a></li>
+                <li><a href="#aboutus">About Us</a></li>
+                <li style="margin-right: 5rem">
+                    <a href="#contact">Contact</a>
+                </li>
+            </ul>
+        </nav>
+
+        <section id="main-content">
+            <div class="left-column">
+                <div class="">
+                    <h1>Longevity for Everyone</h1>
+                    <p>
+                        Using Peter Pan, you can increase your healthspan and
+                        energy levels daily. Unlock simple actionable advice and
+                        improve your health today.
+                    </p>
+                </div>
+                <div class="input-section">
+                    <h2>Try it Out!</h2>
+                    <label for="last-eat">When did you last eat?</label>
+                    <input
+                        type="text"
+                        placeholder="e.g. 2 hours ago"
+                        id="last-eat"
+                    />
+                    <label for="eat">What did you last eat?</label>
+                    <input
+                        type="text"
+                        placeholder="e.g. 3 slices of pepperoni pizza with coke"
+                        id="eat"
+                    />
+                    <label for="plans"
+                        >What are your plans for the next few hours?</label
+                    >
+                    <input
+                        type="text"
+                        placeholder="e.g. Watching TV"
+                        id="plans"
+                    />
+                    <button id="submit">Submit</button>
+                </div>
+                <div class="output-section">
+                    <h2>Peter Pan says...</h2>
+                    <p id="output"></p>
+                </div>
+            </div>
+            <div class="right-column">
+                <img
+                    src="{{ url_for('static', filename='peter_pan.png') }}"
+                    alt="Peter Pan Image"
+                />
+            </div>
+        </section>
+
+        <section id="main-content-2">
+            <div class="left-column-2">
+                <img
+                    src="{{ url_for('static', filename='peter_pan.png') }}"
+                    alt="Peter Pan Image"
+                />
+            </div>
+            <div class="right-column-2">
+                <div class="">
+                    <h1>Removing Friction from a Healthy Lifestyle</h1>
+                    <p>
+                        Peter Pan can help make cooking and diet recommendations
+                        for healthy meals, just by taking a picture of your
+                        fridge.
+                    </p>
+                </div>
+                <div class="input-section">
+                    <h2>Try it Out!</h2>
+                    <!-- TODO: add stuff here -->
+                    <label for="fridge">Take a picture of your fridge</label>
+                    <input type="file" id="fridge" />
+                    <label for="diet"
+                        >What are your dietary restrictions?</label
+                    >
+                    <input
+                        type="text"
+                        placeholder="e.g. vegetarian, lactose intolerant, any allergies"
+                        id="diet"
+                    />
+                    <label for="last-eat">When did you last eat?</label>
+                    <input
+                        type="text"
+                        placeholder="e.g. 2 hours ago"
+                        id="last-eat-2"
+                    />
+                    <label for="eat">What did you last eat?</label>
+                    <input
+                        type="text"
+                        placeholder="e.g. 3 slices of pepperoni pizza with coke"
+                        id="eat-2"
+                    />
+                    <label for="plans"
+                        >What are your plans for the next few hours?</label
+                    >
+                    <input
+                        type="text"
+                        placeholder="e.g. Watching TV"
+                        id="plans-2"
+                    />
+                    <button id="submit-2">Submit</button>
+                </div>
+                <div class="output-section">
+                    <h2>Peter Pan says...</h2>
+                    <p id="output-2"></p>
+                </div>
+            </div>
+        </section>
+
+        <div class="container">
+            <section id="aboutpeter">
+                <h1>About Peter Pan</h1>
+                <p>
+                    Peter Pan is an AI prototype that has one goal: help people
+                    frictionlessly manage their blood glucose levels through
+                    multiple means, making long healthspan and high energy
+                    accessible for everyone.
+                </p>
+                <p>
+                    You might be asking: "Why blood glucose? What does sugar
+                    have to do with my health, precisely?" It's simple: many
+                    negative effects on health (from small problems like fat
+                    gain or energy crashs to diseases like diabetes) stem from
+                    energy mismanagement.
+                </p>
+                <img
+                    class="image"
+                    src="{{ url_for('static', filename='glucose_curve.webp') }}"
+                />
+                <p>
+                    It all has to do with glucose curves. When you eat food, the
+                    carbohydrates are coverted into glucose, which is sent
+                    through your blood. Over time, this glucose is consumed by
+                    your cells using insulin and the curve drops. However, when
+                    the glucose curve is above a certain amount, your body can't
+                    use it all and instead converts it into stored fat. These
+                    high points of glucose result in "spikes" that eventually
+                    crash to low glucose, which you experience as an energy
+                    crash and feeling awful.
+                </p>
+                <p>
+                    Volatile, "spiky" glucose curves can cause people to develop
+                    diseases over time, such as diabetes mellitus. Arguably
+                    worse, these spikes also cause advanced glycation
+                    end-products (AGEs) to form in your blood. AGEs stuff up the
+                    bloodstream and build plaque, which eventually becomes
+                    cardiovascular disease and heart difficulties.
+                </p>
+                <p>
+                    As such, for healthy, energetic day-to-day life and a long,
+                    healthy lifespan, Peter Pan is here to help!
+                </p>
+                <p>
+                    Learn more details about Peter Pan's upcoming features in
+                    this article:
+                    <a
+                        href="https://medium.com/@daniel.haoqing.liu/peter-pan-improving-lifespan-10a7992f2a59"
+                        target="_blank"
+                        >Read more here!</a
+                    >
+                </p>
+            </section>
+
+            <section id="aboutus">
+                <h1>About Us</h1>
+                <p>
+                    Peter Pan was originally made by us three high-school
+                    students in Vancouver, Canada:
+                    <a
+                        href="https://www.linkedin.com/in/daniel-haoqing-liu/"
+                        target="_blank"
+                        >Daniel H. Liu</a
+                    >
+                    ,
+                    <a
+                        href="https://www.linkedin.com/in/chloe-hongan-nguyen/"
+                        target="_blank"
+                        >Chloe Nguyen</a
+                    >
+                    , and
+                    <a
+                        href="https://www.linkedin.com/in/prajwal-prashanth/"
+                        target="_blank"
+                        >Prajwal Prashanth</a
+                    >
+                    .
+                </p>
+                <p>
+                    We worked together to make the initial concepts and
+                    prototype of Peter Pan, as well as defending it as a
+                    Moonshot project. At first, we envisioned an app that could
+                    make longevity and a healthy life accessible to all people.
+                    We realized that maintaining a healthy life is a difficult
+                    goal with other responsibilities and time-consuming tasks.
+                    Longevity wasn't a normal consideration for most, since we
+                    all have other things to do besides concentrate on our
+                    health.
+                </p>
+                <p>
+                    We thought about parents as an especially clear case.
+                    Parents have to balance their children's life, their own
+                    life, and all their responsibilities and simple enjoyment.
+                    In all this chaos and splintered work, parents just can't
+                    ponder their glucose all day. That's where Peter Pan comes
+                    in: we wanted to make a service that manages your glucose
+                    curves and gives actionable feedback to help you maintain
+                    your health, your energy, and extend your healthspan and
+                    lifespan.
+                </p>
+                <p style="margin-bottom: 0">
+                    <i
+                        >"The moment you doubt whether you can fly, you cease
+                        for ever to be able to do it."</i
+                    >
+                </p>
+                <p style="margin-top: 0">- J. M. Barrie, Peter Pan</p>
+            </section>
+
+            <section id="contact">
+                <h1>Contact</h1>
+                <p>
+                    Please email us at one of the following:
+                    daniel.haoqing.liu@gmail.com, chloe.hongan.nguyen@gmail.com,
+                    prjwl028@gmail.com.
+                </p>
+            </section>
+        </div>
+        <script src="{{ url_for('static', filename='script.js') }}"></script>
+    </body>
+</html>
