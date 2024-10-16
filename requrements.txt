@@ -1,0 +1,4 @@
+groq
+google-generativeai
+Flask
+Pillow
