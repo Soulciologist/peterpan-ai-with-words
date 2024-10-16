@@ -2,3 +2,4 @@ groq
 google-generativeai
 Flask
 Pillow
+gunicorn
