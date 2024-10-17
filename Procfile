@@ -1,1 +1,1 @@
-web: pip install --upgrade pip && pip install -r requirements.txt && python run.py
+web: python -m pip install --upgrade pip && python -m pip install -r requirements.txt && python run.py
