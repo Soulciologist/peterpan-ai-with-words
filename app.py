@@ -3,7 +3,7 @@ from os import getenv
 import google.generativeai as genai
 import PIL.Image
 from dotenv import load_dotenv
-from flask import Flask, Response, jsonify, render_template, request
+from flask import Flask, Response, render_template, request
 from groq import Groq
 
 load_dotenv()
