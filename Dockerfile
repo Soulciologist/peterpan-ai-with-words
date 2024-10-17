@@ -15,4 +15,5 @@ RUN pip install -r requirements.txt
 EXPOSE 80
 
 # Command to run the Flask app
-CMD ["python", "run.py"]
+# CMD ["python", "run.py"]
+CMD ["gunicorn", "-w", "4", "-b", "0.0.0.0:5000", "run:app"]
