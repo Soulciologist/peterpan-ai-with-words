@@ -1,4 +1,17 @@
 function ai() {
+    const button = document.getElementById("submit");
+
+    if (
+        document.getElementById("last-eat").value === "" ||
+        document.getElementById("eat").value === "" ||
+        document.getElementById("plans").value === ""
+    ) {
+        alert("Please fill in all the fields.");
+        return;
+    }
+
+    button.disabled = true;
+
     let last_eat = document.getElementById("last-eat").value;
     let eat = document.getElementById("eat").value;
     let plans = document.getElementById("plans").value;
@@ -73,6 +86,9 @@ function ai() {
         })
         .then((finalResult) => {
             console.log("Streaming completed:", finalResult);
+            setTimeout(() => {
+                button.disabled = false;
+            }, 1000);
         })
         .catch((error) => {
             console.error("Error:", error);
@@ -80,6 +96,19 @@ function ai() {
 }
 
 function ai2() {
+    const button = document.getElementById("submit-2");
+
+    if (
+        document.getElementById("last-eat").value === "" ||
+        document.getElementById("eat").value === "" ||
+        document.getElementById("plans").value === ""
+    ) {
+        alert("Please fill in all the fields.");
+        return;
+    }
+
+    button.disabled = true;
+
     let photo = document.getElementById("fridge").files[0];
     let restrictions = document.getElementById("diet").value;
     let last_eat = document.getElementById("last-eat-2").value;
@@ -162,6 +191,9 @@ function ai2() {
         })
         .then((finalResult) => {
             console.log("Streaming completed:", finalResult);
+            setTimeout(() => {
+                button.disabled = false;
+            }, 1000);
         })
         .catch((error) => {
             console.error("Error:", error);

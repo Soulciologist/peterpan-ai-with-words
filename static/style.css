@@ -151,7 +151,10 @@ section {
     padding: 2rem;
 }
 
-
+/* show not allowed cursor for disabled button */
+button:disabled {
+    cursor: not-allowed;
+}
 
 .left-column {
     width: 60%;
