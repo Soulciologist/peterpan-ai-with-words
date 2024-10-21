@@ -17,7 +17,12 @@ function ai() {
             const reader = response.body.getReader();
             const decoder = new TextDecoder();
             let result = "";
-            let elem = document.querySelector(".output-section p");
+            let elem = document.getElementById("output");
+
+            document
+                .getElementById("output-wrapper-1")
+                .removeAttribute("hidden");
+
             // Process the stream
             return new Promise((resolve) => {
                 function read() {
@@ -96,16 +101,17 @@ function ai2() {
     fetch("/ai2", {
         method: "POST",
         body: formData,
-        // headers: {
-        //     // Don't forget your content type
-        //     "Content-Type": "multipart/form-data",
-        // },
     })
         .then((response) => {
             const reader = response.body.getReader();
             const decoder = new TextDecoder();
             let result = "";
             let elem = document.getElementById("output-2");
+
+            document
+                .getElementById("output-wrapper-2")
+                .removeAttribute("hidden");
+
             // Process the stream
             return new Promise((resolve) => {
                 function read() {

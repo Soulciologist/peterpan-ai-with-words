@@ -1,5 +1,6 @@
 :root {
-    --main-bg-color: #ebffca;
+    --main-bg-color: #cbeaff;
+    --nav-bg-color: #e7f4fd;
     --primary-color: #28661A;
     --secondary-color: #00796b;
     --accent-color: #39513B;
@@ -42,7 +43,7 @@ body p {
     margin-bottom: 20px;
 } */
 
-nav {
+/* nav {
     background-color: var(--primary-color);
     padding: 1rem;
     display: flex;
@@ -53,12 +54,60 @@ nav {
     left: 0;
     width: 100%;
     z-index: 1000;
-    /* padding-right: 30px; */
+} */
+
+nav {
+    background-color: var(--nav-bg-color);
+    padding: 1rem 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    height: auto;
+}
+
+nav .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+}
+
+nav .logo img {
+    height: 75px !important;
+    width: auto !important;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li a {
+    color: var(--text-color);
+    text-decoration: none;
+    font-weight: bold;
+}
+
+nav ul li a:hover {
+    color: var(--primary-color);
 }
 
 .logo img {
     max-width: 150px;
     /* Adjust the width as necessary */
+}
+
+#how-it-works, #about, #contact, #aboutpeter, #aboutus {
+    background-color: var(--main-bg-color);
+    max-width: 80em;
+    margin: 0 auto;
+    padding: 2rem 20px;
+    border-bottom: 2px solid var(--accent-color);
 }
 
 #submit, #submit-2 {
@@ -70,14 +119,13 @@ nav {
     height: auto;
 }
 
-nav ul {
+/* nav ul {
     list-style: none;
     display: flex;
     justify-content: flex-end;
     margin: 0;
     padding: 0;
     gap: 2rem;
-    /* Space between nav items */
 }
 
 nav ul li {
@@ -88,18 +136,22 @@ nav ul li a {
     color: white;
     text-decoration: none;
     font-weight: bold;
-}
+} */
 
 section {
-    padding: 2rem;
-    margin: 2rem 0;
+    max-width: 80em;
+    margin: 0 auto;
+    padding: 2rem 20px;
 }
 
 #main-content, #main-content-2 {
     display: flex;
     justify-content: space-between;
+    margin-top: 80px;
     padding: 2rem;
 }
+
+
 
 .left-column {
     width: 60%;
@@ -142,6 +194,27 @@ input, textarea {
     border-radius: 4px;
     background-color: var(--input-bg-color);
     font-family: Inter, Arial, sans-serif;
+}
+
+
+input[type="text"] {
+    width: 100%;
+    max-width: 400px;
+    padding: 8px;
+}
+
+.input-section {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    max-width: 400px;
+}
+
+#aboutpeter img {
+    display: block;
+    margin: 0 auto;
+    max-width: 50%;
+    height: auto;
 }
 
 button {
@@ -201,4 +274,50 @@ h1, h2 {
     background-color: var(--main-bg-color);
     padding: 2rem;
     border-bottom: 2px solid var(--accent-color);
+}
+
+/* Flexbox layout for developer section */
+.developer {
+    display: flex;
+    align-items: center;
+    margin-bottom: 2rem;
+    /* Add space between developers */
+}
+
+.developer img {
+    width: 150px;
+    height: auto;
+    border-radius: 50%;
+    /* Optional: make the image circular */
+    margin-right: 20px;
+}
+
+.developer-info {
+    max-width: 60%;
+}
+
+.developer-info h2 {
+    font-size: 24px;
+    color: var(--secondary-color);
+}
+
+.developer-info p {
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+/* Adjust layout for mobile screens */
+@media (max-width: 768px) {
+    .developer {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .developer img {
+        margin-bottom: 10px;
+    }
+
+    .developer-info {
+        max-width: 100%;
+    }
 }

@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <link
+            rel="icon"
+            href="{{ url_for('static', filename='favicon.ico') }}"
+        />
+        <!-- Basic Meta Tags -->
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta
+            name="title"
+            content="Product Demo | Peter Pan | Longevity for Everyone"
+        />
+        <meta
+            name="description"
+            content="Peter Pan is an AI tool that helps people improve their healthspan and energy by managing their glucose levels. Try it out for personalized health advice!"
+        />
+        <meta
+            name="keywords"
+            content="Peter Pan, Longevity, Healthspan, AI Health Assistant, Glucose Management, Healthy Living, Energy Management, Blood Sugar, Diet, AI prototype"
+        />
+        <meta
+            name="author"
+            content="Daniel H. Liu, Chloe Nguyen, Prajwal Prashanth"
+        />
+        <meta name="robots" content="index, follow" />
+
+        <!-- Open Graph / Facebook -->
+        <meta property="og:type" content="website" />
+        <meta
+            property="og:url"
+            content="https://peterpan-ai.com/product-demo"
+        />
+        <meta
+            property="og:title"
+            content="Product Demo | Peter Pan | Longevity for Everyone"
+        />
+        <meta
+            property="og:description"
+            content="Peter Pan helps you manage your health and energy levels through AI-driven advice. Improve your glucose management today!"
+        />
+        <meta
+            property="og:image"
+            content="https://peterpan-ai.com/static/peter_pan.webp"
+        />
+
+        <!-- Twitter -->
+        <meta property="twitter:card" content="summary_large_image" />
+        <meta
+            property="twitter:url"
+            content="https://peterpan-ai.com/product-demo"
+        />
+        <meta
+            property="twitter:title"
+            content="Product Demo | Peter Pan | Longevity for Everyone"
+        />
+        <meta
+            property="twitter:description"
+            content="Peter Pan is an AI-driven tool that helps people optimize their health and energy through glucose management. Try it now!"
+        />
+        <meta
+            property="twitter:image"
+            content="https://peterpan-ai.com/static/peter_pan.webp"
+        />
+
+        <title>Product Demo | Peter Pan | Longevity for Everyone</title>
+        <link
+            rel="stylesheet"
+            href="{{ url_for('static', filename='style.css') }}"
+        />
+        <link
+            href="https://fonts.googleapis.com/css?family=Montserrat:100,200,300,400,500,600,700,800,900"
+            rel="stylesheet"
+        />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Kite+One&display=swap"
+            rel="stylesheet"
+        />
+        <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    </head>
+    <body>
+        <nav>
+            <div class="container">
+                <div class="logo">
+                    <a href="/">
+                        <img
+                            src="{{ url_for('static', filename='peter-pan-head.webp') }}"
+                            alt="Peter Pan"
+                        />
+                    </a>
+                </div>
+                <ul>
+                    <li><a href="/product-demo">Product Demo</a></li>
+                    <li><a href="/about-peter-pan">About Peter Pan</a></li>
+                    <li><a href="/about-us">About Us</a></li>
+                </ul>
+            </div>
+        </nav>
+
+        <section id="main-content">
+            <div class="left-column">
+                <div class="">
+                    <h1>Longevity for Everyone</h1>
+                    <p>
+                        Using Peter Pan, you can increase your healthspan and
+                        energy levels daily. Unlock simple actionable advice and
+                        improve your health today.
+                    </p>
+                </div>
+                <div class="input-section">
+                    <h2>Try it Out!</h2>
+                    <label for="last-eat">When did you last eat?</label>
+                    <input
+                        type="text"
+                        placeholder="e.g. 2 hours ago"
+                        id="last-eat"
+                    />
+                    <label for="eat">What did you last eat?</label>
+                    <input
+                        type="text"
+                        placeholder="e.g. 3 slices of pepperoni pizza with coke"
+                        id="eat"
+                    />
+                    <label for="plans"
+                        >What are your plans for the next few hours?</label
+                    >
+                    <input
+                        type="text"
+                        placeholder="e.g. Watching TV"
+                        id="plans"
+                    />
+                    <div class="button-wrapper">
+                        <button id="submit">Submit</button>
+                    </div>
+                </div>
+                <!-- Separate wrapper for the output box -->
+                <div class="output-wrapper" id="output-wrapper-1" hidden>
+                    <h2>Peter Pan says...</h2>
+                    <p id="output"></p>
+                </div>
+            </div>
+            <div class="right-column">
+                <img
+                    src="{{ url_for('static', filename='peter_pan.webp') }}"
+                    alt="Peter Pan Image"
+                />
+            </div>
+        </section>
+
+        <section id="main-content-2">
+            <div class="left-column-2">
+                <img
+                    src="{{ url_for('static', filename='peter_pan.webp') }}"
+                    alt="Peter Pan Image"
+                />
+            </div>
+            <div class="right-column-2">
+                <div class="">
+                    <h1>Removing Friction from a Healthy Lifestyle</h1>
+                    <p>
+                        Peter Pan can help make cooking and diet recommendations
+                        for healthy meals, just by taking a picture of your
+                        fridge.
+                    </p>
+                </div>
+                <div class="input-section">
+                    <h2>Try it Out!</h2>
+                    <!-- TODO: add stuff here -->
+                    <label for="fridge">Take a picture of your fridge</label>
+                    <input type="file" id="fridge" />
+                    <label for="diet"
+                        >What are your dietary restrictions?</label
+                    >
+                    <input
+                        type="text"
+                        placeholder="e.g. vegetarian, lactose intolerant, any allergies"
+                        id="diet"
+                    />
+                    <label for="last-eat-2">When did you last eat?</label>
+                    <input
+                        type="text"
+                        placeholder="e.g. 2 hours ago"
+                        id="last-eat-2"
+                    />
+                    <label for="eat-2">What did you last eat?</label>
+                    <input
+                        type="text"
+                        placeholder="e.g. 3 slices of pepperoni pizza with coke"
+                        id="eat-2"
+                    />
+                    <label for="plans-2"
+                        >What are your plans for the next few hours?</label
+                    >
+                    <input
+                        type="text"
+                        placeholder="e.g. Watching TV"
+                        id="plans-2"
+                    />
+                    <!-- Wrap the button in a separate div to avoid it inheriting label width -->
+                    <div class="button-wrapper">
+                        <button id="submit-2">Submit</button>
+                    </div>
+                </div>
+                <!-- Separate wrapper for the output box -->
+                <div class="output-wrapper" id="output-wrapper-2" hidden>
+                    <h2>Peter Pan says...</h2>
+                    <p id="output-2"></p>
+                </div>
+            </div>
+        </section>
+        <script src="{{ url_for('static', filename='script.js') }}"></script>
+    </body>
+</html>

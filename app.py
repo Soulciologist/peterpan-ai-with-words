@@ -22,7 +22,7 @@ generation_config = {
 }
 
 model = genai.GenerativeModel(
-    model_name="gemini-1.5-flash",
+    model_name="gemini-1.5-pro",
     generation_config=generation_config,
     # safety_settings = Adjust safety settings
     # See https://ai.google.dev/gemini-api/docs/safety-settings
@@ -32,6 +32,21 @@ model = genai.GenerativeModel(
 @app.route("/")
 def index():
     return render_template("index.html")
+
+
+@app.route("/product-demo")
+def product_demo():
+    return render_template("product-demo.html")
+
+
+@app.route("/about-peter-pan")
+def about_peter_pan():
+    return render_template("about-peter-pan.html")
+
+
+@app.route("/about-us")
+def about_us():
+    return render_template("about-us.html")
 
 
 @app.route("/ai", methods=["POST"])
@@ -75,7 +90,6 @@ def ai2():
     plans = request.form.get("plans")
 
     photo = PIL.Image.open(photo)
-    print(photo)
 
     response = model.generate_content(
         [
@@ -84,6 +98,10 @@ def ai2():
         ]
     )
     fridge_items = response.text
+    if len(fridge_items) > 4000:
+        print("Truncating fridge items:", len(fridge_items), "\n", fridge_items)
+        fridge_items = fridge_items[: 4000 - 3] + "..."
+        print("Truncated fridge items:", len(fridge_items), "\n", fridge_items)
 
     completion = groq.chat.completions.create(
         model="llama-3.2-90b-text-preview",
